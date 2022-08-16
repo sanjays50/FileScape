@@ -1,0 +1,51 @@
+
+    <%- include('./header') %>
+    <% if(!locals.uuid){ %>
+    <section class="upload-container">
+        <div class="drop-zone">
+            <div class="icon-container">
+                <img src="/icon.png" alt="file icon" class="center" draggable="false">
+                <img src="/icon.png" alt="file icon" class="left" draggable="false">
+            </div>
+                    <form action="/files/<%= user._id %> " method="POST" role="form"  enctype="multipart/form-data">
+                        <input type="file"  name="myfile" required>
+                        <div class="title">
+                            <button class="browsebtn" style="background-color:#7eaaaa;" type="reset">Reset</button>
+                            <button class="browsebtn" style="background-color:#7eaaaa;" type="submit">Upload
+                        </div>
+                    </form>       
+        </div>
+        <% } else { %>
+            <div class="success">
+                <p><%= message %> </p>
+            </div>
+                <div class="sharing-container">
+                    <p class="expire p1">Link to download file</p>
+                    <div class="input-container">
+                        <form action="/posts/<%= user._id %>/<%= uuid %>" method="POST">
+                            <input type="text" name="url" id="fileURL" readonly value="http://localhost:3000/download/api/<%= user._id %>/<%= uuid %>">
+                            <img src="/copy-icon.png" alt="copy icon" id="copyBtn">
+                            <input type="text" name="projectname" placeholder="Project Name" style="margin-top: 15px;">
+                            <input type="textarea" name="discription" placeholder="Project Discription" style="margin-top: 15px;">
+                            <button class="browsebtn" style="background-color:#7eaaaa;" type="submit"> Post</button>
+                            <a href="/upload/<%= user._id %>"></a><button class="browsebtn" style="width:90px ; background-color:#7eaaaa;"" type="submit">Reupload</button></a>
+                        </form>
+                    </div>
+                    <p class="p1">Or send via Email</p>
+                    <div class="email-container">
+                        <form action="/files/send/<%= user._id %>/<%= uuid %>" method="POST">
+                            <div class="field">
+                                <label for="sender">Your Email:</label>
+                                <input type="email" id="sender" name="emailFrom"  value="<%= user.email %>" placeholder="<%= user.email %>" required>
+                            </div>
+                            <div class="field">
+                                <label for="receiver">Receiver's Email:</label>
+                                <input type="email" id="receiver" name="emailTo" required>
+                            </div>
+                            <button type="submit">Send</button>
+                        </form>
+                    </div>
+                </div>
+        <% } %>
+    </section>
+    <%- include('./footer.ejs') %>

@@ -1,0 +1,29 @@
+
+    <%- include('./header') %>
+    
+    <div class="search-container">
+        <form action="/download/api" method="POST">
+            <input type="text" name="path" style="height: 35px; border-radius: 10px;">
+            <button type="submit"  class="browsebtn" style="background-color:#7eaaaa;">Search</button>
+        </form>
+    </div>
+        <% if(locals.dwn){ %> 
+            <section class="download-container">
+                <div>
+                    <% if(locals.uuid){ %> 
+                        <h2>Your file is ready to download</h2>
+                        <div class="file">
+                            <h4> <%= name %> </h4>
+                            <small><%= parseInt(filesize/1000) %>KB </small>
+                        </div>
+                        <div class="dwnbtn">
+                            <button><a href="<%= downloadLink  %> ">Download</a></button>
+                        </div>
+                    <% } %>
+    
+                </div> 
+            </section>
+        <% } %> 
+        
+        <%- include('./footer.ejs') %>
+   

@@ -1,0 +1,291 @@
+:root {
+    --main-bg-color:#4ea33b7f;
+    --border-color:#0288d147;
+    --container-width:500px;
+}
+
+html{
+    font-family: system-ui;
+    background: var(--main-bg-color);
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.drop-zone,
+.upload-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 500px;
+    margin: auto;
+    margin-top: 10%;
+}
+
+.upload-container{
+    background: #c6e1edcd;
+    border-radius: 25px;
+    box-shadow: 0px 20px 20px #0000020e; 
+}
+
+.drop-zone{
+    width: 400px;
+    min-height: 200px;
+    border: 2px dashed var(--border-color);
+    margin: 30px;
+    border-radius: 10px;
+}
+.drop-zone form{
+    text-align: center;
+}
+.drop-zone form input{
+    text-align: center;
+    margin-left: 155px;
+}
+
+.icon-container{
+    width:75px;
+    height: 100px;
+    position: relative;
+}
+.icon-container img{
+    width: 75px;
+    position: absolute;
+    transform-origin: bottom;
+    transition: transform .250ms ease-in-out;
+}
+
+.icon-container .left{
+    filter: grayscale(0.5);
+    transform: scale(.9);
+}
+
+
+.browsebtn{
+    background-color: #a59c9c6e;
+  border: 0;
+  border-radius: .5rem;
+  box-sizing: border-box;
+  color: #111827;
+  font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: .875rem;
+  font-weight: 600;
+  line-height: 1.0rem;
+  padding: .65rem 1rem;
+  text-align: center;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin: 2px;
+  width: 4.5rem;
+  margin-top: 8px;
+}
+
+
+.browsebtn:hover {
+  background-color: rgb(170, 171, 173);
+}
+
+.browsebtn:focus {
+  outline-offset: 2px;
+}
+
+.browsebtn:focus-visible {
+  box-shadow: none;
+}
+
+.sharing-container{
+    width: var(--container-width);
+    margin: auto;
+    margin-top: 0.8%;
+}
+
+.sharing-container .input-container{
+    position: relative;
+}
+.sharing-container .input-container input{
+    width: 100%;
+    border: 2px dashed var(--border-color);
+    border-radius: 6px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    font-size: 20px;
+    background: #f5fcff;
+    color: #0000008c;
+}
+
+.input-container img{
+    position:absolute;
+    height: 30px;
+    width: 30px;
+    right: 0px;
+    top: 10px;
+}
+
+.p1{
+    opacity: 0.8;
+    text-align: center;
+    font-family:sans-serif;
+}
+
+.success{
+    width:100%;
+    height: 45px;
+    background: green;
+    text-align: center;
+    padding: auto;
+    font-size: 18px;
+    margin-bottom: auto;
+}
+
+.email-container{
+    display: flex;
+    align-items: center;
+}
+.email-container form{
+    width: 100%;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.email-container .field{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    width: 400px;
+}
+.email-container label{
+    font-size: 18px;
+}
+.email-container input{
+    border: none;
+    border-bottom: 3px solid var(--border-color);
+    font-size: 18px;
+    text-align: center;
+}
+.email-container input:focus{
+    outline: none;
+}
+
+.email-container button{
+    font-size: 18px;
+    padding: 8px 40px;
+    margin-top: 15px;
+    background-color: #c8deff;
+    border: none;
+    border-radius: 10px;
+    color: #607d83;
+    cursor: pointer;
+}
+
+
+.p2{
+    color:#fa0068;
+}
+
+.download-container{
+    background: #b3d3e1;
+    border-radius: 25px;
+    box-shadow: 0px 20px 20px #0000020e;
+    width: 400px;
+    min-height: 250px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-family: system-ui;
+    margin: auto;
+    margin-top: 3%;
+}
+.dwnbtn button{
+    font-size: 28px;
+    padding: 3px 25px;
+    margin-top: 15px;
+    background-color: rgb(143 156 179 / 77%);
+    border: none;
+    border-radius: 20px;
+    color: #607d83;
+    cursor: pointer;
+}
+.dwnbtn a{
+    text-decoration: none;
+    
+}
+
+.p3{
+    color: #820c0c;
+}
+.file{
+    color: #2e2079;
+}
+@media screen and (max-width:600px){
+    :root{
+        --container-width:320px;
+    }
+    .drop-zone{
+        width:300px;
+    }
+    .email-container .field{
+        flex-direction: column;
+        width: 300px;
+    }
+    .download-container{
+        width: 320px;
+    }
+    .dwnbtn button{
+        margin-bottom: 10px;
+    }
+}
+@media screen and (max-width:380px){
+    :root{
+        --container-width:220px;
+    }
+    .drop-zone{
+        width:200px;
+    }
+    .drop-zone form input{
+        margin-left: 125px;
+    }
+    .email-container .field{
+        flex-direction: column;
+        width: 200px;
+    }
+    .download-container{
+        width: 220px;
+    }
+    .dwnbtn button{
+        margin-bottom: 8px;
+    }
+}
+.footer{
+    display: flex;
+    justify-content: center;
+}
+.search-container{
+    width: 16.5rem;
+    height: 4%;
+    margin: auto;
+    margin-top: 5%;
+}
+.likebtn{
+    width: 62px;
+    height: 30px;
+    background-color:#26b2b75c;
+    margin-left: 7px;
+    margin-top: 15px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    justify-content: center;
+}
+

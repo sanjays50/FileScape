@@ -1,0 +1,32 @@
+
+    <%- include('./header') %>
+        <section class="body-font overflow-hidden">
+            <div class="container px-5 py-24 mx-auto">
+              <div class="-my-8 divide-y-2 divide-gray-100">
+                <% for(let post of posts){ %> 
+                <div class="py-8 flex flex-wrap md:flex-nowrap">
+                  <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col" style="background-color: rgb(219, 219, 219); border-radius: 10px; padding: 15px;justify-content: center; width: 13%; margin-right: 2%;margin-left: 4%; ">
+                    <span class="mt-1 text-xm"><%= post.createdAt %></span>
+                  </div>
+                  <div class="md:flex-grow" style="background-color: rgb(219, 219, 219); border-radius: 10px; padding: 15px;">
+                    <h2 class="text-2xl font-medium  title-font mb-2">@<%= post.username %>/<%= post.projectname %></h2>
+                    <p class="leading-relaxed"><%= post.discription %></p>
+                    <a class="text-indigo-500 inline-flex items-center mt-4" href="<%= post.url %>"><%= post.url %>
+                      <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"></path>
+                        <path d="M12 5l7 7-7 7"></path>
+                      </svg>
+                    </a>
+                    <a href="/posts/likes/<%= user._id %>/<%= post._id %>">
+                      <div class="likebtn">
+                          Likes: <button type="submit"><%= post.likes.length %></button>
+                      </div>
+                     </a>
+                  </div>
+                </div>
+                <%  }%>
+              </div>
+            </div>
+        </section>
+    <%- include('./footer.ejs') %>
+   
